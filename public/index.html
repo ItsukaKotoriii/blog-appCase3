@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>📝 Блог</h1>
+            <div id="authButtons">
+                <button id="loginBtn">Вход</button>
+                <button id="registerBtn">Регистрация</button>
+                <button id="logoutBtn" style="display:none;">Выйти</button>
+            </div>
+        </header>
+
+        <main>
+            <!-- Формы входа/регистрации -->
+            <section id="authForms">
+                <div id="loginForm" style="display:none;">
+                    <h2>Вход</h2>
+                    <input type="text" id="loginUsername" placeholder="Логин">
+                    <input type="password" id="loginPassword" placeholder="Пароль">
+                    <button id="loginSubmit">Войти</button>
+                </div>
+                <div id="registerForm" style="display:none;">
+                    <h2>Регистрация</h2>
+                    <input type="text" id="regUsername" placeholder="Логин">
+                    <input type="password" id="regPassword" placeholder="Пароль">
+                    <button id="regSubmit">Зарегистрироваться</button>
+                </div>
+            </section>
+
+            <!-- Основной контент (виден после входа) -->
+            <div id="mainContent" style="display:none;">
+                <div class="tabs">
+                    <button class="tab active" data-tab="feed">Лента</button>
+                    <button class="tab" data-tab="all">Все посты</button>
+                    <button class="tab" data-tab="my">Мои посты</button>
+                    <button class="tab" data-tab="new">Создать пост</button>
+                    <button class="tab" data-tab="tags">По тегам</button>
+                    <button class="tab" data-tab="users">Пользователи</button>
+                </div>
+                <div id="tabContent"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Модалка комментариев -->
+    <div id="commentsModal" style="display:none;" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Комментарии</h3>
+            <div id="commentsList"></div>
+            <textarea id="commentInput" placeholder="Ваш комментарий..."></textarea>
+            <button id="commentSubmit">Отправить</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
